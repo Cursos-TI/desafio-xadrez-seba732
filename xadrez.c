@@ -1,21 +1,41 @@
 #include <stdio.h>
 
 // Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+
 
 int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
+    int rainha = 1, bispo = 1, torre =1; // Variáveis para contar o número de casas que cada peça anda
+        printf("Os movimentos são:\n");
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
+       for (rainha = 1; rainha <= 8; rainha++){  // FOR,  movimenta a rainha para cima, de 1 a 8 casas
+        printf( "rainha cima: %d casa\n", rainha);  // Mostra quantas casas a rainha andou para cima
+   }
 
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
+   while (bispo <=5) // While, movimenta o bispo para cima/direita, de 1 a 5 casas
+ {
+    printf("bispo cima/direita: %d casa\n", bispo);  // Mostra quantas casas o bispo andou na diagonal cima a direita 
+    bispo++;  // Incrementa o número de casas
+ }
+   do{
+    printf("torre direta: %d casa\n", torre);  // Mostra quantas casas a torre andou
+    torre++; // Incrementa o número de casas
+    
+   } while (torre <= 5); // DO-WHILE movimenta a torre para a direita, de 1 a 5 casas
+   
 
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+      return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
 
     // Nível Aventureiro - Movimentação do Cavalo
     // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
@@ -28,5 +48,4 @@ int main() {
     // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
     // Inclua o uso de continue e break dentro dos loops.
 
-    return 0;
-}
+
