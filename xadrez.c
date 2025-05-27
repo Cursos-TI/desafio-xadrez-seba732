@@ -1,36 +1,41 @@
 #include <stdio.h>
 
-// Desafio de Xadrez - MateCheck
+// Função recursiva que simula o movimento da torre
+void movitorre(int torre) {
+    if (torre > 0) {  // Condição para encerrar movimentos da torre, maior que 0, caso não encerra
+        printf("Torre move para a direita: 1 casa\n");  // Imprime o movimento
+        movitorre(torre - 1); // Chamada recursiva reduz 1 movimento ate 0, (conforme condição do if)
+    }
+}
 
+// Função recursiva que simula o movimento da rainha
+void movirainha(int rainha) {
+    if (rainha > 0) {  // Condição para encerrar os movimentos da rainha precisa ser maior que 0, caso não encerra
+        printf("Rainha move para a esquerda: 1 casa\n");  // Imprime o movimento
+        movirainha(rainha - 1); // Chamada recursiva reduz 1 movimento ate 0, (conforme condição do if)
+    }
+}
+
+// Função recursiva que simula o movimento do bispo
+void movibispo(int bispo) { // Condição para encerrar, bispo maior que 0, caso não encerra 
+    if (bispo > 0) {
+        printf("Bispo move na diagonal cima/direita: 1 casa\n");  // Imprime o movimento
+        movibispo(bispo - 1); // Chamada recursiva reduz 1 movimento ate 0, (conforme condição do if)
+    }
+}
 
 int main() {
-    int rainha = 1, bispo = 1, torre =1, movcavalo = 1; // Variáveis para contar o número de casas que cada peça anda
+    printf("Movimentos da TORRE:\n");  
+    movitorre(5); // Ao atribuir 5 no movitorre faz a torre movimentar 5 casas
 
-    printf("Os movimentos são:\n");
-    printf("\n"); // Apenas espaço para ficar mais limpo
-    printf("Os movimentos da rainha são:\n");
-       for (rainha = 1; rainha <= 8; rainha++){  // FOR,  movimenta a rainha para cima, de 1 a 8 casas
-        printf( "rainha cima: %d casa\n", rainha);  // Mostra quantas casas a rainha andou para cima
-   }
+    printf("\nMovimentos da RAINHA:\n");  // O n no inicio é uma linha em branco para separar visualmente os blocos
+    movirainha(8); // Ao atribuir 8 no movirainha faz a torre movimentar 8 casas
 
-   printf("\n"); // Apenas espaço para ficar mais limpo
-   printf("Os movimentos do bispo são:\n");
-   while (bispo <=5) // While, movimenta o bispo para cima/direita, de 1 a 5 casas
- {
-    printf("bispo cima/direita: %d casa\n", bispo);  // Mostra quantas casas o bispo andou na diagonal cima a direita 
-    bispo++;  // Incrementa o número de casas
- }
+    printf("\nMovimentos do BISPO:\n"); 
+    movibispo(5); // Ao atribuir 8 no movirainha faz a torre movimentar 8 casas
 
-   printf("\n"); // Apenas espaço para ficar mais limpo
-   printf("Os movimentos da torre são:\n");
-   do{
-    printf("torre direta: %d casa\n", torre);  // Mostra quantas casas a torre andou
-    torre++; // Incrementa o número de casas
-    
-   } while (torre <= 5); // DO-WHILE movimenta a torre para a direita, de 1 a 5 casas
-   
-   printf("\n"); // Apenas espaço para ficar mais limpo
-
+   printf("\n");
+   int movcavalo = 1;
    printf("Os movimentos do cavalo são:\n");
 
     // Loop while com decremento: executa enquanto movcavalo for diferente de 0
@@ -52,20 +57,3 @@ int main() {
    }
 
    
-
-
-
-
-
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
-
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
-
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
-
-
